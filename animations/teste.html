@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Troca de Imagem</title>
+    
+    <script>
+        function trocarImagem() {
+            var imagem = document.getElementById("imagem");
+
+            if (imagem.src.endsWith("../assets/goku base.png")) {
+                imagem.src = "../assets/goku ssj.png";
+                imagem.alt = "Imagem 2";
+            } else {
+                imagem.src = "../assets/goku base.png";
+                imagem.alt = "Imagem 1";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Troca de Imagem</h1>
+
+    <img id="imagem" src="../assets/goku base.png" alt="Imagem 1"> <br>
+
+
+
+
+    <button id="botao" onclick="trocarImagem()">Trocar Imagem</button>
+
+</body>
+
+</html>
