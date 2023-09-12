@@ -1,0 +1,3 @@
+Link repositorio do github: https://github.com/maciel/SCOM
+Comando para rodar no terminal do VSCODE: npm run dev
+Após isso, colocar no navegador: http://localhost:8061/
