@@ -11,17 +11,13 @@
                 passwordInput.type = "password";
             }
         }
-        function verificarSenha() {
+        function verificarSenha(event) {
             var passwordInput = document.getElementById("senha");
             var passwordInput2 = document.getElementById("cps");
             if (passwordInput.value != passwordInput2.value) {
-                alert('senhas não combinando!')
+                alert('Senhas não coincidem!');
+                event.preventDefault(); // Impede o envio do formulário
             }
-            else {
-                alert('Usuario Registrado!')
-            }
-
-
         }
         function togglePasswordVisibilitys() {
             var passwordInput = document.getElementById("cps");
@@ -41,7 +37,7 @@
 <body>
     <h1>Registro de Aluno</h1>
     <div class="itens">
-        <form action="/envio" method="post">
+        <form action="/envio" method="post" onsubmit="verificarSenha(event)">
             <div class="nome">
                 <in>
             </div>
@@ -123,15 +119,15 @@
             </div>
             <div class="nome">
                 <label>Data de Nascimento</label>
-                <input type="date" name="nome" placeholder="E-email" max="2023-09-04" ><br>
+                <input type="date" name="nome" placeholder="E-email" max="2023-09-04"><br>
             </div>
             <div class="nome">
                 <label>Horário de Nascimento</label>
-                <input type="time" name="nome" placeholder="E-email" ><br>
+                <input type="time" name="nome" placeholder="E-email"><br>
             </div>
             <div class="nome">
                 <label>Cor Favorita</label>
-                <input type="color" name="nome" placeholder="E-email" ><br>
+                <input type="color" name="nome" placeholder="E-email"><br>
             </div>
 
             <div class="nome">
@@ -152,7 +148,7 @@
             </div>
 
 
-            <button id='btn' type="submit" onclick="verificarSenha()">Enviar</button>
+            <button id='btn' type="submit">Enviar</button>
         </form>
     </div>
 
